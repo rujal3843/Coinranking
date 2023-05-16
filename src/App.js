@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { CryptoCars } from './component/CryptoCars'
+import { Routes, Route } from 'react-router-dom'
+import { CryptoDetails } from './component/CryptoDetails'
 
-function App() {
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+ <h1 className='stick top-0 text-center text-[30px] font-bold bg-slate-600 mb-5 '>Coinranking Using RapidApi</h1>
+
+
+      <Routes>
+        <Route path='/' element={<CryptoCars />} />
+        <Route path='/crypto/:id' element={<CryptoDetails />} />
+      </Routes>
+      {/* <CryptoCars /> */}
+
+    </>
+  )
 }
 
-export default App;
+export default App
